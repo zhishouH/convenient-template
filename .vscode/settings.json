@@ -7,5 +7,6 @@
 	},
 	"eslint.format.enable": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"stylelint.validate": ["css", "scss", "vue", "html"]
+	"stylelint.validate": ["css", "scss", "vue", "html"],
+	"i18n-ally.localesPaths": ["src/locales"]
 }

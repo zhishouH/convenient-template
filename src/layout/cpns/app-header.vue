@@ -1,5 +1,5 @@
 <script setup>
-	import { ref, h } from 'vue'
+	import { ref } from 'vue'
 	import { useRoute } from 'vue-router'
 	import getAssetUrl from '@/utils/load-assets'
 	import { watch } from 'vue'
@@ -34,8 +34,8 @@
 	const isPerson = ref(false)
 	watch(
 		() => route.path,
-		(newPath, oldPath) => {
-			menuData.value.map(item => {
+		(newPath) => {
+			menuData.value.map((item) => {
 				const newItem = item
 				if (newPath.includes(newItem.routerValue)) {
 					newItem.isActive = true
@@ -75,62 +75,28 @@
 
 <template>
 	<el-header>
-		<h1
-			class="logo"
-			@click="backToHome"
-		>
-			<el-image
-				class="logo-img"
-				:src="logo"
-				fit="cover"
-			/>
+		<h1 class="logo" @click="backToHome">
+			<el-image class="logo-img" :src="logo" fit="cover" />
 			<strong>
 				{{ $t('header.logoTitle') }}
 			</strong>
 		</h1>
 		<div class="menu">
-			<template
-				v-for="item in menuData"
-				:key="item.routerValue"
-			>
-				<router-link
-					:class="['menu-item', { 'is-active': item.isActive }]"
-					:to="item.routerValue"
-				>
+			<template v-for="item in menuData" :key="item.routerValue">
+				<router-link :class="['menu-item', { 'is-active': item.isActive }]" :to="item.routerValue">
 					{{ item.routerTitle }}
 				</router-link>
 			</template>
 		</div>
 		<div class="info">
-			<router-link
-				class="search"
-				to="/search"
-			>
-				<el-icon
-					size="20"
-					:class="{ 'is-active': isSearch }"
-					><Search
-				/></el-icon>
+			<router-link class="search" to="/search">
+				<el-icon size="20" :class="{ 'is-active': isSearch }"><Search /></el-icon>
 			</router-link>
-			<router-link
-				class="notice"
-				to="/notice"
-			>
-				<el-icon
-					size="20"
-					:class="{ 'is-active': isNotice }"
-					><Notification
-				/></el-icon>
+			<router-link class="notice" to="/notice">
+				<el-icon size="20" :class="{ 'is-active': isNotice }"><Notification /></el-icon>
 			</router-link>
-			<router-link
-				class="personal"
-				to="/personal"
-			>
-				<el-icon
-					size="20"
-					:class="{ 'is-active': isPerson }"
-					><Avatar
-				/></el-icon>
+			<router-link class="personal" to="/personal">
+				<el-icon size="20" :class="{ 'is-active': isPerson }"><Avatar /></el-icon>
 			</router-link>
 		</div>
 	</el-header>
@@ -159,29 +125,29 @@
 	}
 
 	.menu {
-		flex: 1;
-		height: 100%;
 		display: flex;
 		justify-content: center;
+		height: 100%;
+		flex: 1;
 		gap: 40px;
 
 		.menu-item {
 			position: relative;
 			display: flex;
 			align-items: center;
-			font-weight: bold;
 			padding: 0 8px;
+			font-weight: bold;
 
 			&::before {
-				content: '';
 				position: absolute;
 				bottom: 0;
 				left: 0;
 				width: 100%;
 				height: 4px;
-				border-radius: 4px 4px 0 0;
 				background-color: transparent;
+				border-radius: 4px 4px 0 0;
 				transition: $transition;
+				content: '';
 			}
 
 			&.is-active {

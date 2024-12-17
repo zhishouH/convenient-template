@@ -11,12 +11,17 @@ const router = createRouter({
 		/* 主页 */
 		{
 			path: '/home',
-			component: () => import('@/views/home/index.vue'),
+			component: () => import('@/views/Home/index.vue'),
+		},
+		/* 关于 */
+		{
+			path: '/about',
+			component: () => import('@/views/About/index.vue'),
 		},
 		/* 404 */
 		{
 			path: '/:pathMatch(.*)',
-			component: () => import('../views/not-found/index.vue'),
+			component: () => import('@/views/NotFound/index.vue'),
 		},
 	],
 })
