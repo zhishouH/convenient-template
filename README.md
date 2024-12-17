@@ -858,7 +858,7 @@ export default getAssetUrl
 pnpm add sass -D
 ```
 
-## Css 重置
+## css 重置
 
 ```shell
 pnpm add normalize.css
