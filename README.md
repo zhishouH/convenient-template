@@ -31,8 +31,8 @@
 |- .prettierrc  // 格式化配置
 |- .stylelintrc.json  // css样式规则检查规范
 |- .jsconfig.json  // 编辑器扩展
-|- eslint.config.js  // js代码检擦
-|- vite.config.js // 教授架配置
+|- eslint.config.js  // js代码检查
+|- vite.config.js // 教手架配置
 ```
 
 ## 创建
