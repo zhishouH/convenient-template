@@ -1,20 +1,21 @@
 import { defineStore } from 'pinia'
-import { ref, useTemplateRef, computed } from 'vue'
+import { ref } from 'vue'
+import { getHomeData } from '@/services/index'
 
 const useHomeStore = defineStore('home', () => {
 	/* state */
-	const counter = ref(1)
-	const counterEl = useTemplateRef('counter') // 句柄
+	const homeData = ref({})
 
-	/* getter */
-	const doubleCounter = computed(() => {
-		return counter.value * 2
-	})
+	/* action */
+	const getHomeDataAction = async params => {
+		const res = await getHomeData(params)
+
+		homeData.value = res.data
+	}
 
 	return {
-		counter,
-		doubleCounter,
-		counterEl,
+		homeData,
+		getHomeDataAction,
 	}
 })
 

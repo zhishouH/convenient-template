@@ -8,6 +8,9 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers' // 导�
 import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
 
 export default defineConfig({
+	server: {
+		host: true,
+	},
 	plugins: [
 		vue(), // 启用 Vue 插件
 		vueDevTools(), // 启用vueDevTools插件
@@ -24,7 +27,7 @@ export default defineConfig({
 				{
 					libraryName: 'element-plus',
 					esModule: true,
-					resolveStyle: (name) => {
+					resolveStyle: name => {
 						return `element-plus/theme-chalk/${name}.css`
 					},
 				},

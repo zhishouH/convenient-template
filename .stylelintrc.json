@@ -36,7 +36,7 @@
 		"selector-pseudo-class-no-unknown": [
 			true,
 			{
-				"ignorePseudoClasses": ["deep"]
+				"ignorePseudoClasses": ["deep", "global"]
 			}
 		],
 		"order/properties-order": [
@@ -47,8 +47,15 @@
 			"left",
 			"z-index",
 			"display",
+			"flex-flow",
+			"flex-direction",
 			"justify-content",
+			"align-content",
 			"align-items",
+			"gap",
+			"column-gap",
+			"row-gap",
+			"order",
 			"float",
 			"clear",
 			"overflow",

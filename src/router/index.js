@@ -1,22 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import route from './generateRoute'
 
 const router = createRouter({
 	history: createWebHistory(),
 	routes: [
-		/* 重定向 */
 		{
 			path: '/',
-			redirect: '/home',
-		},
-		/* 主页 */
-		{
-			path: '/home',
-			component: () => import('@/views/Home/index.vue'),
-		},
-		/* 关于 */
-		{
-			path: '/about',
-			component: () => import('@/views/About/index.vue'),
+			component: () => import('@/layout/index.vue'),
+			children: [...route],
 		},
 		/* 404 */
 		{

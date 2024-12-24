@@ -1,8 +1,2 @@
-// 一屏高度：100vh 减去头部50 减去main上下边距20
-$oneScreenHeight: calc(100vh - 50px - 40px);
-
 // 主色调
 $primary-color: #165dff;
-
-// 动画过渡
-$transition: all 250ms linear;

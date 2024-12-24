@@ -1,1 +1,1 @@
-export * from './modules/overview'
+export * from './modules/home'
