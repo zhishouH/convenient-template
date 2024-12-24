@@ -1,3 +1,13 @@
+# Convenient Template
+
+采用了现代前端开发的最佳实践，利用 Vite、Vue 3、Vue Router、Pinia、Element Plus 等技术
+
+集成了VueDevTools、Vue-i18n、Axios、Debounce、Throttle、Cache、Eslint、Stylelint、Prettier 等工具
+
+一系列的工具和插件提升代码质量和团队协作效率，使得整个开发过程更加高效和规范，适合快速迭代和持续集成
+
+实现了高效、灵活和可维护的开发架构
+
 ## 结构
 
 ```javascript
